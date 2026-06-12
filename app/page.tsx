@@ -12,7 +12,7 @@ const valueProps = [
       "A growing catalog of vetted Canadian grocery brands, ready for GCC shelves.",
   },
   {
-    title: "15+ Years of MENA Market Knowledge",
+    title: "14+ Years of MENA Market Knowledge",
     description:
       "Deep buying experience across GCC retail — we know what sells, and how to get it there.",
   },
