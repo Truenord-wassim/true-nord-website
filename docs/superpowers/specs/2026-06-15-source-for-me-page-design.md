@@ -93,7 +93,7 @@ All fields live in one `<form>`. Layout: paired fields in a 2-column grid on des
 | Email | `email` | Yes | Paired with Full Name |
 | Company Name | `text` | Yes | Paired with Country |
 | Country | `select` (dropdown) | Yes | Paired with Company Name |
-| Phone | `tel` | No (optional) | Full width on its own row |
+| Phone | `tel` | No (optional) | Half-width on its own row (matches the column width of the paired fields above; the other half of the row is empty) |
 | What are you looking to source? | `textarea` | Yes | Full width |
 | Product Photo | `file` (image only) | No (optional) | Full width |
 | Privacy consent | `checkbox` | Yes | Full width, above submit button |
@@ -116,7 +116,7 @@ export const COUNTRY_OPTIONS = [
 ] as const;
 ```
 
-This matches the 8 markets True Nord serves (per the Regions & Markets page) plus an "Other" catch-all. The dropdown's first option is a disabled placeholder: "Select your country".
+This matches the 8 markets True Nord serves (per the Regions & Markets page) plus an "Other" catch-all. The dropdown's first option is a disabled placeholder: "Select your country". If "Other" is selected, no follow-up free-text field is shown — the value "Other" is simply included as-is in the notification email; the "What are you looking to source?" field is where any extra context would naturally go.
 
 ### Validation rules (Zod schema, enforced server-side in `actions.ts`)
 
@@ -163,6 +163,8 @@ The submit button shows a pending state (disabled, label changes to "Sending..."
 - If a file is present, `actions.ts` validates its `type` and `size` per the rules in Section 4, then converts it to a `Buffer` (`Buffer.from(await file.arrayBuffer())`) for the Resend attachment.
 - The attachment is included **only** on the internal notification email (to Fouad/Mireille) — not on the auto-acknowledgment sent to the submitter.
 
+**Note on validation re-attempts:** if a submission fails validation on some *other* field (e.g., a typo in the email address) after a photo was selected, the browser cannot programmatically restore the file input's selection when the form re-renders — the user will need to re-select their image. This is a standard browser security limitation, not a bug, and doesn't need special handling.
+
 ---
 
 ## 7. Emails (via Resend)
@@ -174,7 +176,7 @@ Both emails are sent from `actions.ts` using the Resend SDK, after validation su
 - **`RESEND_API_KEY`** — required. Resend API key (set in `.env.local` for local dev, and in Vercel project settings for production).
 - **`RESEND_FROM_EMAIL`** — optional, defaults to `onboarding@resend.dev` (Resend's sandbox sender, works without domain verification). Once `true-nord.ca` is verified with Resend (see Section 8 / open item), set this to a real address like `sourcing@true-nord.ca`.
 
-Both emails are sent with `from: \`True Nord <${process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev"}>\``.
+Both emails are sent with ``from: `True Nord <${process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev"}>` ``.
 
 ### Email 1: Auto-acknowledgment (to the submitter)
 
