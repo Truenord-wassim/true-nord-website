@@ -1,3 +1,6 @@
+// File-level "use server" lets SourceForMeForm.tsx (a Client Component) call
+// submitSourcingRequest. That directive restricts this file to async-function
+// exports only, so shared constants/types live in ./types instead.
 "use server";
 
 import { Resend } from "resend";
