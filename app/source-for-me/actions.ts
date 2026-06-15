@@ -1,34 +1,8 @@
+"use server";
+
 import { Resend } from "resend";
 import { z } from "zod";
-
-export const COUNTRY_OPTIONS = [
-  "United Arab Emirates",
-  "Saudi Arabia",
-  "Qatar",
-  "Kuwait",
-  "Bahrain",
-  "Oman",
-  "Jordan",
-  "Egypt",
-  "Other",
-] as const;
-
-export type FormState = {
-  status: "idle" | "success" | "error";
-  errors?: {
-    fullName?: string[];
-    email?: string[];
-    companyName?: string[];
-    country?: string[];
-    phone?: string[];
-    sourcingDetails?: string[];
-    productPhoto?: string[];
-    consent?: string[];
-  };
-  message?: string;
-};
-
-export const initialFormState: FormState = { status: "idle" };
+import { COUNTRY_OPTIONS, type FormState } from "./types";
 
 const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_IMAGE_SIZE_BYTES = 5 * 1024 * 1024;
@@ -70,8 +44,6 @@ export async function submitSourcingRequest(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  "use server";
-
   const result = sourcingRequestSchema.safeParse({
     fullName: formData.get("fullName") ?? "",
     email: formData.get("email") ?? "",

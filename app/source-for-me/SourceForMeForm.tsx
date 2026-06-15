@@ -2,11 +2,8 @@
 
 import Link from "next/link";
 import { useActionState } from "react";
-import {
-  COUNTRY_OPTIONS,
-  initialFormState,
-  submitSourcingRequest,
-} from "./actions";
+import { submitSourcingRequest } from "./actions";
+import { COUNTRY_OPTIONS, initialFormState } from "./types";
 
 const inputClass =
   "w-full rounded-md border border-navy/25 px-3 py-2 text-sm text-navy focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy";
