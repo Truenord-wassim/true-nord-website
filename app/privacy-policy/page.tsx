@@ -24,13 +24,20 @@ export default function PrivacyPolicyPage() {
         <div className="mx-auto max-w-3xl">
 
           {/* §1 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             1. Who We Are
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
             True Nord is a Canadian food trading company that sources Canadian
             grocery products and distributes them to retail partners across the
-            GCC and MENA region. We operate at www.true-nord.ca.
+            GCC and MENA region. We operate at{" "}
+            <a
+              href="https://www.true-nord.ca"
+              className="font-medium text-red underline hover:text-red-shade"
+            >
+              www.true-nord.ca
+            </a>
+            .
           </p>
           <p className="mb-4 leading-relaxed text-navy/80">
             For any questions about this policy, contact us at:{" "}
@@ -44,7 +51,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §2 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             2. What Information We Collect
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -75,7 +82,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §3 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             3. Why We Collect It
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -129,7 +136,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §4 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             4. How Long We Keep Your Data
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -141,7 +148,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §5 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             5. Who We Share It With
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -163,7 +170,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §6 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             6. Your Rights
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -199,7 +206,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §7 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             7. Cookies
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -213,7 +220,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §8 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             8. International Transfers
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -225,7 +232,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §9 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             9. Security
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -238,7 +245,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §10 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             10. Changes to This Policy
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -249,7 +256,7 @@ export default function PrivacyPolicyPage() {
           <hr className="my-8 border-navy/10" />
 
           {/* §11 */}
-          <h2 className="mt-10 mb-3 font-serif text-xl font-semibold text-navy">
+          <h2 className="mt-10 mb-3 font-heading text-xl font-semibold text-navy">
             11. Contact
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
@@ -268,7 +275,13 @@ export default function PrivacyPolicyPage() {
             </a>
           </p>
           <p className="mb-4 leading-relaxed text-navy/80">
-            Website: www.true-nord.ca
+            Website:{" "}
+            <a
+              href="https://www.true-nord.ca"
+              className="font-medium text-red underline hover:text-red-shade"
+            >
+              www.true-nord.ca
+            </a>
           </p>
 
         </div>
