@@ -11,8 +11,8 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-24 text-center text-white">
-        <h1 className="text-4xl md:text-5xl">Get in Touch</h1>
+      <section aria-labelledby="hero-heading" className="bg-navy px-6 py-24 text-center text-white">
+        <h1 id="hero-heading" className="text-4xl md:text-5xl">Get in Touch</h1>
         <div className="mx-auto my-5 h-1 w-16 bg-red" aria-hidden="true" />
         <p className="text-lg font-medium text-white/90">
           Whether you&apos;re a Canadian supplier or a GCC retailer, we&apos;d
@@ -21,7 +21,7 @@ export default function ContactPage() {
       </section>
 
       {/* Two-column content */}
-      <section className="px-6 py-16">
+      <section aria-label="Contact information" className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <div className="flex flex-col gap-12 md:flex-row">
 
@@ -96,6 +96,7 @@ export default function ContactPage() {
                   {/* TODO: replace href="#" with the True Nord LinkedIn company page URL once available */}
                   <a
                     href="#"
+                    aria-label="True Nord on LinkedIn (coming soon)"
                     className="mt-0.5 block text-red underline hover:text-red-shade"
                   >
                     true-nord

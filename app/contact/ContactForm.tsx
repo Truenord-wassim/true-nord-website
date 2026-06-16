@@ -18,7 +18,7 @@ export default function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div aria-live="polite">
+      <div aria-live="polite" className="py-4">
         <p className="text-base font-medium text-navy">
           Thanks — we&apos;ll be in touch within 1–2 business days.
         </p>
