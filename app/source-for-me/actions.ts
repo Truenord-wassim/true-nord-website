@@ -60,7 +60,7 @@ export async function submitSourcingRequest(
 
   if (!result.success) {
     return {
-      status: "idle",
+      status: "error",
       errors: result.error.flatten().fieldErrors,
     };
   }
