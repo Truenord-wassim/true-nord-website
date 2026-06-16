@@ -81,17 +81,17 @@ export async function submitSupplierRequest(
 
   const fromAddress = `True Nord <${process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev"}>`;
 
-  const attachments =
-    productMaterials.size > 0
-      ? [
-          {
-            filename: productMaterials.name,
-            content: Buffer.from(await productMaterials.arrayBuffer()),
-          },
-        ]
-      : undefined;
-
   try {
+    const attachments =
+      productMaterials.size > 0
+        ? [
+            {
+              filename: productMaterials.name,
+              content: Buffer.from(await productMaterials.arrayBuffer()),
+            },
+          ]
+        : undefined;
+
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const ack = await resend.emails.send({
