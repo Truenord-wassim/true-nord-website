@@ -88,15 +88,13 @@ export default function ContactPage() {
                   </address>
                 </li>
 
-                {/* LinkedIn — placeholder link, replace href="#" with real URL once available */}
                 <li>
                   <p className="text-xs font-semibold uppercase tracking-wide text-navy/50">
                     LinkedIn
                   </p>
-                  {/* TODO: replace href="#" with the True Nord LinkedIn company page URL once available */}
                   <a
-                    href="#"
-                    aria-label="True Nord on LinkedIn (coming soon)"
+                    href="https://www.linkedin.com/company/true-nord/"
+                    aria-label="True Nord on LinkedIn"
                     className="mt-0.5 block text-red underline hover:text-red-shade"
                   >
                     true-nord
