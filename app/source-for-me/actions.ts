@@ -47,6 +47,14 @@ export async function submitSourcingRequest(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
+  // Honeypot: real visitors never see or fill the hidden "fax" field. If it
+  // has a value, the submission is from a spam bot — return success so the bot
+  // learns nothing, but send no email.
+  const honeypot = formData.get("fax");
+  if (typeof honeypot === "string" && honeypot.trim() !== "") {
+    return { status: "success" };
+  }
+
   const result = sourcingRequestSchema.safeParse({
     fullName: formData.get("fullName") ?? "",
     email: formData.get("email") ?? "",

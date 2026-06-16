@@ -16,10 +16,32 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const siteDescription =
+  "True Nord sources Canadian grocery brands and brings them to GCC and MENA retailers, and helps Canadian brands reach GCC shelves.";
+
 export const metadata: Metadata = {
+  // The site's canonical address. Lets Next.js turn relative URLs (like the
+  // social-share image) into the full absolute URLs that link previews need.
+  metadataBase: new URL("https://true-nord.ca"),
   title: "True Nord | Canadian Grocery Brands for GCC Markets",
-  description:
-    "True Nord sources Canadian grocery brands and brings them to GCC and MENA retailers, and helps Canadian brands reach GCC shelves.",
+  description: siteDescription,
+  // Open Graph powers the preview card shown when a link is shared on most
+  // platforms (LinkedIn, WhatsApp, Facebook). The preview image itself comes
+  // from app/opengraph-image.tsx, which Next.js wires up automatically.
+  openGraph: {
+    title: "True Nord | Canadian Grocery Brands for GCC Markets",
+    description: siteDescription,
+    url: "https://true-nord.ca",
+    siteName: "True Nord",
+    locale: "en_CA",
+    type: "website",
+  },
+  // Twitter/X uses its own tags; "summary_large_image" shows a large preview.
+  twitter: {
+    card: "summary_large_image",
+    title: "True Nord | Canadian Grocery Brands for GCC Markets",
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({

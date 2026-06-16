@@ -148,6 +148,18 @@ export default function ContactForm() {
           )}
         </div>
 
+        {/* Honeypot field: invisible to real visitors (positioned off-screen,
+            and hidden from screen readers and keyboard navigation). Only spam
+            bots fill it in — the server silently ignores any submission where
+            it has a value. */}
+        <div
+          className="absolute left-[-9999px] top-0 h-0 w-0 overflow-hidden"
+          aria-hidden="true"
+        >
+          <label htmlFor="fax">Fax (leave this blank)</label>
+          <input type="text" id="fax" name="fax" tabIndex={-1} autoComplete="off" />
+        </div>
+
         <button
           type="submit"
           disabled={pending}

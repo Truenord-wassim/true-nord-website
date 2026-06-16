@@ -6,8 +6,8 @@ const footerLinks = [
   { href: "/sourcing-logistics", label: "Sourcing & Logistics" },
   { href: "/certifications", label: "Certifications" },
   { href: "/brands", label: "Current Brands" },
-  { href: "/source-for-me", label: "Source for Me" },
-  { href: "/sell-in-gcc", label: "Sell in the GCC" },
+  { href: "/source-for-me", label: "Buy Canadian Products" },
+  { href: "/sell-in-gcc", label: "I'm a Canadian Brand" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/contact", label: "Contact" },
 ];
