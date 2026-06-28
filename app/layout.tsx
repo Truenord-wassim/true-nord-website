@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -63,6 +64,10 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        {/* Vercel Web Analytics: privacy-friendly, cookieless visitor stats.
+            Collects no cookies and builds no personal profiles. Data only
+            records once Web Analytics is enabled in the Vercel dashboard. */}
+        <Analytics />
       </body>
     </html>
   );

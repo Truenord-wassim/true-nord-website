@@ -63,22 +63,35 @@ export default function PrivacyPolicyPage() {
             <li>Full name</li>
             <li>Email address</li>
             <li>Phone number (if provided)</li>
-            <li>Company name and country</li>
+            <li>Company name, country, and website (if provided)</li>
             <li>The message or request you submit</li>
+            <li>
+              Any files you choose to attach (for example, product photos or
+              product materials)
+            </li>
           </ul>
           <p className="mb-4 leading-relaxed text-navy/80">
             We do not collect payment information, and we do not require you to
             create an account to use this website.
           </p>
           <p className="mb-4 leading-relaxed text-navy/80">
-            We also automatically collect basic technical data when you visit
-            our site, including:
+            We also use a privacy-friendly analytics tool (Vercel Web Analytics)
+            that collects limited, anonymous information when you visit our site,
+            including:
           </p>
           <ul className="mb-4 list-disc space-y-1 pl-6 text-navy/80">
-            <li>Your IP address (anonymized)</li>
-            <li>Browser type and device type</li>
-            <li>Pages visited and time spent on the site (via analytics)</li>
+            <li>The pages you view on our site</li>
+            <li>The website or link that referred you to us</li>
+            <li>
+              Your approximate location (country only), determined without
+              storing your IP address
+            </li>
+            <li>Your general device and browser type</li>
           </ul>
+          <p className="mb-4 leading-relaxed text-navy/80">
+            This analytics data is collected without cookies. It is not used to
+            identify you personally or to build a profile of you.
+          </p>
           <hr className="my-8 border-navy/10" />
 
           {/* §3 */}
@@ -166,6 +179,11 @@ export default function PrivacyPolicyPage() {
               services act as processors and do not use your data for their own
               purposes.
             </li>
+            <li>
+              <strong>Website &amp; analytics provider (Vercel)</strong> — hosts
+              our website and provides the cookieless, anonymous visitor
+              analytics described above.
+            </li>
           </ul>
           <hr className="my-8 border-navy/10" />
 
@@ -210,12 +228,9 @@ export default function PrivacyPolicyPage() {
             7. Cookies
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
-            Our website may use cookies for basic analytics (e.g. Google
-            Analytics or Plausible). These are used to understand how visitors
-            use our site — no personal profiles are built.
-          </p>
-          <p className="mb-4 leading-relaxed text-navy/80">
-            You can disable cookies in your browser settings at any time.
+            Our website does not use cookies. The analytics tool we use (Vercel
+            Web Analytics) is cookieless — it does not store cookies on your
+            device and does not track you across other websites.
           </p>
           <hr className="my-8 border-navy/10" />
 
@@ -224,10 +239,12 @@ export default function PrivacyPolicyPage() {
             8. International Transfers
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
-            True Nord is based in Canada. If you contact us from the GCC,
-            Jordan, Egypt, or elsewhere, your information will be stored on
-            servers located in Canada or within trusted cloud infrastructure
-            (e.g. Vercel) that meets international data protection standards.
+            True Nord is based in Canada. When you submit a form, your
+            information is delivered to us by email through Resend, and our
+            website and analytics run on Vercel. These service providers may
+            process or store data on servers located outside Canada, including
+            in the United States. We only use providers that apply recognized
+            data-protection safeguards.
           </p>
           <hr className="my-8 border-navy/10" />
 
