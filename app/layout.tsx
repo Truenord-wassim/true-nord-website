@@ -42,6 +42,11 @@ export const metadata: Metadata = {
     title: "True Nord | Canadian Grocery Brands for GCC Markets",
     description: siteDescription,
   },
+  // Proves to Google Search Console that we own this site. Next.js renders this
+  // as <meta name="google-site-verification" content="..."> in the page <head>.
+  verification: {
+    google: "c5XOjfB3mxolOEEawNvaUqZuYuMUE-g1MuWcdz620-o",
+  },
 };
 
 export default function RootLayout({
