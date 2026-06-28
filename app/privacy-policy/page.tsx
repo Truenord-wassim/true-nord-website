@@ -135,7 +135,7 @@ export default function PrivacyPolicyPage() {
                     To improve our website using anonymized analytics
                   </td>
                   <td className="border border-navy/20 px-4 py-2">
-                    Legitimate business interest
+                    Implied consent (anonymous, non-identifying data)
                   </td>
                 </tr>
               </tbody>
@@ -153,10 +153,10 @@ export default function PrivacyPolicyPage() {
             4. How Long We Keep Your Data
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
-            We keep inquiry data for up to{" "}
-            <strong>2 years</strong> from the date of submission, or until the
-            business relationship concludes, whichever is longer. After that,
-            we delete it.
+            We keep your inquiry only as long as we reasonably need it — to
+            respond to your request, follow up, and manage any business
+            relationship that results from it. When it is no longer needed for
+            those purposes, we delete it.
           </p>
           <hr className="my-8 border-navy/10" />
 
@@ -277,10 +277,21 @@ export default function PrivacyPolicyPage() {
             11. Contact
           </h2>
           <p className="mb-4 leading-relaxed text-navy/80">
-            For any privacy-related questions:
+            We have designated a privacy officer who is accountable for True
+            Nord&apos;s handling of personal information. For any
+            privacy-related questions, or to exercise your rights, you can reach
+            us at:
           </p>
           <p className="mb-1 leading-relaxed text-navy/80">
             <strong>True Nord Inc.</strong>
+          </p>
+          <p className="mb-1 leading-relaxed text-navy/80">
+            Attn: Fouad El Dib, Privacy Officer
+          </p>
+          <p className="mb-1 leading-relaxed text-navy/80">
+            Unit C18, 724 Caledonia Rd
+            <br />
+            North York, ON, Canada M6B 3X7
           </p>
           <p className="mb-1 leading-relaxed text-navy/80">
             Email:{" "}
