@@ -1,5 +1,27 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+
+// The two founders, shown in the "Meet the Founders" section below.
+// Photos live in /public/team and are referenced by their path starting from "/".
+const founders = [
+  {
+    name: "Fouad El Dib",
+    title: "Co-Founder",
+    photo: "/team/fouad-el-dib.png",
+    linkedin: "https://www.linkedin.com/in/fouad-el-dib-4ab026101/",
+    bio:
+      "Fouad brings over 13 years of experience in senior commercial roles across the MENA region, where he managed teams in eight countries for a retailer with over USD $1 billion in revenue. With a deep understanding of the market and its consumers, he co-founded True Nord to bridge the gap between Canadian products and MENA shoppers.",
+  },
+  {
+    name: "Mireille Tayeh",
+    title: "Co-Founder",
+    photo: "/team/mireille-tayeh.png",
+    linkedin: "https://www.linkedin.com/in/mireille-tayeh-4a733449/",
+    bio:
+      "Mireille, co-founder of True Nord, has over 11 years of sales experience in the MENA region. She has worked with leading international CPG companies to manage categories across every GCC market, overseeing portfolios generating hundreds of millions in sales. She possesses a sharp instinct for go-to-market strategy, shelf-space acquisition, and sales and marketing planning.",
+  },
+];
 
 const expertiseCards = [
   {
@@ -107,6 +129,53 @@ export default function AboutPage() {
               <div key={item.title} className="border-l-4 border-red pl-5">
                 <h3 className="mb-2 text-xl">{item.title}</h3>
                 <p className="text-sm text-navy/80">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-2 text-center text-sm font-semibold uppercase tracking-wide text-red">
+            Our People
+          </p>
+          <h2 className="mb-12 text-center text-3xl">Meet the Founders</h2>
+          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+            {founders.map((person) => (
+              <div key={person.name} className="text-center">
+                {/* Circular headshot: a fixed-size round container that crops the
+                    square photo to a circle. "fill" makes the image fill that box. */}
+                <div className="relative mx-auto mb-5 h-40 w-40 overflow-hidden rounded-full md:h-48 md:w-48">
+                  <Image
+                    src={person.photo}
+                    alt={`Portrait of ${person.name}`}
+                    fill
+                    sizes="(min-width: 768px) 192px, 160px"
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="text-xl">{person.name}</h3>
+                <p className="mb-4 text-sm font-semibold text-red">
+                  {person.title}
+                </p>
+                <p className="mb-5 text-sm text-navy/80">{person.bio}</p>
+                <a
+                  href={person.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-red hover:text-red-shade"
+                >
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                  Connect on LinkedIn
+                </a>
               </div>
             ))}
           </div>
