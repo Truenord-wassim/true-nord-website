@@ -102,18 +102,8 @@ export async function submitSupplierRequest(
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const ack = await resend.emails.send({
-      from: fromAddress,
-      to: email,
-      replyTo: "fouad@true-nord.ca",
-      subject: "We've received your inquiry — True Nord",
-      text: `Hi ${fullName},\n\nThanks for reaching out to True Nord. We've received your inquiry about selling in the GCC and a member of our team will be in touch within 1–2 business days.\n\nHere's a summary of what you submitted:\n\n- Brand / Company: ${companyName}\n- Website: ${website || "Not provided"}\n- Products: ${productDetails}\n\nIf you have any questions in the meantime, just reply to this email.\n\nThe True Nord Team`,
-    });
-
-    if (ack.error) {
-      return { status: "error", message: GENERAL_ERROR_MESSAGE };
-    }
-
+    // Notify our team first — this is the critical email. If it fails, we
+    // return an error so the visitor can retry and no lead is lost.
     const notify = await resend.emails.send({
       from: fromAddress,
       to: INTERNAL_RECIPIENTS,
@@ -126,6 +116,17 @@ export async function submitSupplierRequest(
     if (notify.error) {
       return { status: "error", message: GENERAL_ERROR_MESSAGE };
     }
+
+    // Then send the visitor their confirmation. Our team already has the lead,
+    // so if this courtesy email fails we still report success — we don't want
+    // the visitor resubmitting and creating a duplicate.
+    await resend.emails.send({
+      from: fromAddress,
+      to: email,
+      replyTo: "fouad@true-nord.ca",
+      subject: "We've received your inquiry — True Nord",
+      text: `Hi ${fullName},\n\nThanks for reaching out to True Nord. We've received your inquiry about selling in the GCC and a member of our team will be in touch within 1–2 business days.\n\nHere's a summary of what you submitted:\n\n- Brand / Company: ${companyName}\n- Website: ${website || "Not provided"}\n- Products: ${productDetails}\n\nIf you have any questions in the meantime, just reply to this email.\n\nThe True Nord Team`,
+    });
 
     return { status: "success" };
   } catch {

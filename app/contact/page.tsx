@@ -94,6 +94,8 @@ export default function ContactPage() {
                   </p>
                   <a
                     href="https://www.linkedin.com/company/true-nord/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="True Nord on LinkedIn"
                     className="mt-0.5 block text-red underline hover:text-red-shade"
                   >
